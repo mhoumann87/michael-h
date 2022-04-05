@@ -9,3 +9,10 @@ function url_for($script_path)
   }
   return WWW_ROOT.$script_path;
 }
+
+//* Redirect to another page
+function redirect_to($location)
+{
+  header('Location: '.$location);
+  exit();
+}
