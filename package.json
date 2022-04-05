@@ -4,7 +4,7 @@
   "description": "My private website for my portfolio",
   "main": "public/index.php",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postcss": "postcss src/styles.css -d public/assets/css/ --watch"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/mhoumann87/michael-h/issues"
   },
-  "homepage": "https://github.com/mhoumann87/michael-h#readme"
+  "homepage": "https://github.com/mhoumann87/michael-h#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefix": "^1.0.1",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.4.3"
+  }
 }
