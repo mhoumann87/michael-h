@@ -1,0 +1,12 @@
+/*
+ * Resets based on:
+ * https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
+*/
+
+/* Use box-sizing for all elements */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
