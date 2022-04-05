@@ -27,7 +27,7 @@ define("SHARED_PATH", PRIVATE_PATH.'/shared');
  * - Do not need to include the domain
  * - Use same document root as webserver
 */
-$public_end = strpos($_SERVER['SCRIPT_NAME'].'/public');
+$public_end = strpos($_SERVER['SCRIPT_NAME'], '/public');
 $public_end = $public_end + 7;
 $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);
 define("WWW_ROOT", $doc_root);
