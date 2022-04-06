@@ -8,5 +8,6 @@ $page_title = '- Front Page';
  
 ?>
 
-</body>
-</html>
+<h1>This is a simple test front page</h1>
+
+<?php include '../private/shared/footer.php'; ?>
