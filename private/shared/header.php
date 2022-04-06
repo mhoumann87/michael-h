@@ -23,7 +23,7 @@
 
 <header>
   <div class="logo">
-    <h1>michael-h.dk</h1>
+    <img src="<?php echo url_for('/assets/images/logo.svg'); ?>" alt="logo" />
   </div>
 
   <nav>
