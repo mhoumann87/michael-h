@@ -35,5 +35,10 @@ define("WWW_ROOT", $doc_root);
 /*
  * Import all the files we need for out project 
 */
-
+require_once 'db_credentials.php';
+require_once 'db_functions.php';
 require_once 'functions.php';
+
+
+// Connect to the database
+$db = db_connect();
