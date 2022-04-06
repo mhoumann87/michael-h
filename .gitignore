@@ -131,3 +131,6 @@ dist
 
 # CSS files are not nessasary, just run podtcss
 public/assets/css
+
+# Login informations to the database
+private/db_credentials.php
