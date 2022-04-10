@@ -52,3 +52,5 @@ spl_autoload_register('my_autoload');
 // Connect to the database
 $db = db_connect();
 
+// Create a database object
+DatabaseObject::set_database($db);
