@@ -39,6 +39,16 @@ require_once 'db_credentials.php';
 require_once 'db_functions.php';
 require_once 'functions.php';
 
+// Auto load all classes
+function my_autoload($class) 
+{
+  if (preg_match('/\A\w+\Z/', $class)) {
+    include 'classes/'.$class.'.class.php';
+  }
+}
+spl_autoload_register('my_autoload');
+
 
 // Connect to the database
 $db = db_connect();
+
