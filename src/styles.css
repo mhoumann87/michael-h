@@ -1,2 +1,3 @@
 @import './reset/reset.css';
+@import './base/body.css';
 @import './components/header.css';

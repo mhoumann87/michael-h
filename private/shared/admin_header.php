@@ -27,6 +27,6 @@ if (!isset($page_title)) {
   </nav>
 </header>
 
+<div class="container">
 
-<main>
 
