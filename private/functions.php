@@ -16,3 +16,20 @@ function redirect_to($location)
   header('Location: '.$location);
   exit();
 }
+
+//* Encode string for use with URLs as a query string
+function u($string = '')
+{
+  return urlencode($string);
+}
+
+function raw_u($string = '')
+{
+  return rawurldecode($string);
+}
+
+//* Sanitize the special characters by replacing them with HTML code
+function h($string = '')
+{
+  return htmlspecialchars($string);
+}
