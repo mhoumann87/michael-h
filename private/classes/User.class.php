@@ -7,11 +7,13 @@ class User extends DatabaseObject
   static protected $db_columns = [
     'user_id',
     'username',
+    'email',
     'hashed_password'
   ];
 
   public $user_id;
   public $username;
+  public $email;
   protected $hashed_password;
   public $password;
   public $confirm_password;
@@ -22,6 +24,7 @@ class User extends DatabaseObject
   {
     $this->username = $args['username'] ?? '';
     $this->password = $args['password'] ?? '';
+    $this->email = $args['email'] ?? '';
     $this->confirm_password = $args['confirm_password'] ?? '';
     $this->hashed_password = $args['hashed_password'] ?? '';
   }
@@ -38,6 +41,14 @@ class User extends DatabaseObject
       $this->errors[] = "Username must be at least 6 characters";
     } elseif(!has_unique_entries('username', $this->username, $this->id ?? 0)) {
       $this->errors[] = 'Username is already in use, please choose another';
+    }
+
+    if (is_blank($this->email)) {
+      $this->errors[] = "Email can't be blank";
+    } elseif (!has_valid_email_format($this->email)) {
+      $this->errors[] = "Please enter a valid email address";
+    } elseif (!has_unique_entries('email', $this->email, $this->id ?? 0)) {
+      $this->errors[] = "Email is already in the database";
     }
 
     if ($this->password_required) {
