@@ -56,3 +56,6 @@ $db = db_connect();
 
 // Create a database object
 DatabaseObject::set_database($db);
+
+// Create a new session
+$session = new Session;
