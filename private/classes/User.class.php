@@ -57,7 +57,7 @@ class User extends DatabaseObject
         $this->errors[] = "Please enter a password";
       } elseif(!has_length($this->password, array('min' => 8))) {
         $this->errors[] = "Password must be at lease 8 characters";
-      } elseif (!preg_match('/[A-Z]', $this->password)) {
+      } elseif (!preg_match('/[A-Z]/', $this->password)) {
         $this->errors[] = "Password must contain at least 1 uppercase letter";
       } elseif (!preg_match('/[a-z]/', $this->password)) {
         $this->errors[] = "Password must contain at least one lowercase letter";;
@@ -72,5 +72,22 @@ class User extends DatabaseObject
       $this->errors[] = "Confirm password and password must be the same";
     }
   } // end validate()
+
+  //* Function to use for validation of uniqueness
+  //* Should maybe be in validation functions
+  //TODO check to see if this function should be in validation_functions.php
+  static public function find_by_column($column, $value)
+  {
+    $sql  = "SELECT * FROM ".static::$table_name." ";
+    $sql .= "WHERE ".$column."= '".self::$db->escape_string($value)."'";
+
+    $obj_array = static::find_by_sql($sql);
+
+    if (!empty($obj_array)) {
+      return array_shift($obj_array);
+    } else {
+      return false;
+    }
+  } 
 
 } // End User
