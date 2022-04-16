@@ -89,7 +89,7 @@ function has_unique_entries($column, $value, $current_id = "0")
 {
   $user = User::find_by_column($column, $value);
   
-  if ($user === false || $user->id == $current_id) {
+  if ($user === false || $user->user_id == $current_id) {
     return true;
   } else {
     // user is already in the database
