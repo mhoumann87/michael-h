@@ -17,4 +17,17 @@ function display_errors($errors = array())
   }
 
   return $output;
+
+}
+
+//* Display session messages, mostly used to display db action results
+function display_session_message()
+{
+  global $session;
+
+  $msg = $session->message();
+  if (isset($msg) && $msg != '') {
+    $session->clear_message();
+    return '<div class="session-message">'.h($msg).'</div>';
+  }
 }
