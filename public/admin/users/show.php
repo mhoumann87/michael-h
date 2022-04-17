@@ -13,6 +13,14 @@ if (!$id) {
   redirect_to(url_for('/admin/users/index.php'));
 } 
 
+// Find the user in the database and assign it to the user variable
+$user = User::find_by_id($id);
+
+// IF we can't find a user, we redirect to the front page
+if (!$user) {
+  redirect_to(url_for('/admin/users/index.php'));
+}
+
 ?>
 
 <?php include SHARED_PATH.'/admin_header.php'; ?>
@@ -25,7 +33,10 @@ if (!$id) {
 
 <main>
 
-  <p>Show user <?php echo $id; ?></p>
+  <h3>Username: <?php echo h($user->username); ?></h3>
+  <p>ID: <?php echo h($user->user_id); ?></p>
+  <p>Email: <?php echo h($user->email) ?></p>
+  <p>Role: <?php echo ($user->is_admin) ? 'Admin' : 'User'; ?></p>
 
 </main>
 
