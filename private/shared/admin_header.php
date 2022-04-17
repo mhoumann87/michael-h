@@ -29,4 +29,6 @@ if (!isset($page_title)) {
 
 <div class="container">
 
+<?php echo display_session_message();?> 
+
 
