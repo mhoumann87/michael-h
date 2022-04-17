@@ -82,6 +82,12 @@ class User extends DatabaseObject
     $this->hashed_password = password_hash($this->password, PASSWORD_BCRYPT);
   }
 
+  //* Check password is correct on login
+  public function verify_password($password)
+  {
+    return password_verify($password, $this->hashed_password);
+  }
+
   //* Update info with the hashed password
   protected function create()
   {
