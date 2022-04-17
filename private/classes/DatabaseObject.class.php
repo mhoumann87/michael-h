@@ -41,9 +41,24 @@ class DatabaseObject
     return $result;
   }
 
-  // Read
+  //* Read
 
-  //* Find post by custom SQL
+  //* Find single post by the id
+  static public function find_by_id($id)
+  {
+    $sql  = "SELECT * FROM ".static::$table_name." ";
+    $sql .= "WHERE user_id = '".self::$db->escape_string($id)."'";
+
+    $obj_array = static::find_by_sql($sql);
+
+    if (!empty($obj_array)) {
+      return array_shift($obj_array);
+    } else {
+      return false;
+    }
+  }
+
+  //* Find post by SQL, utility function for every SQL call
   static protected function find_by_sql($sql)
   {
     $result = self::$db->query($sql);
