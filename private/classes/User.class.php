@@ -8,12 +8,14 @@ class User extends DatabaseObject
     'user_id',
     'username',
     'email',
-    'hashed_password'
+    'hashed_password',
+    'is_admin'
   ];
 
   public $user_id;
   public $username;
   public $email;
+  public $is_admin;
   protected $hashed_password;
   public $password;
   public $confirm_password;
@@ -23,8 +25,9 @@ class User extends DatabaseObject
   public function __construct($args = [])
   {
     $this->username = $args['username'] ?? '';
-    $this->password = $args['password'] ?? '';
     $this->email = $args['email'] ?? '';
+    $this->is_admin = $args['is_admin'] ?? 0;
+    $this->password = $args['password'] ?? '';
     $this->confirm_password = $args['confirm_password'] ?? '';
     $this->hashed_password = $args['hashed_password'] ?? '';
   }
@@ -72,6 +75,19 @@ class User extends DatabaseObject
       $this->errors[] = "Confirm password and password must be the same";
     }
   } // end validate()
+
+  //* Function to hash the password before inserting it in the database
+  protected function set_hashed_password()
+  {
+    $this->hashed_password = password_hash($this->password, PASSWORD_BCRYPT);
+  }
+
+  //* Update info with the hashed password
+  protected function create()
+  {
+    $this->set_hashed_password();
+    return parent::create();
+  }
 
   //* Function to use for validation of uniqueness
   //* Should maybe be in validation functions
