@@ -5,6 +5,7 @@ class Session
 
   public $user_id;
   public $username;
+  public $is_admin;
   private $last_login;
 
   public const MAX_LOGIN_AGE = 60 * 60 * 24 * 7; // One week
@@ -22,6 +23,7 @@ class Session
       session_regenerate_id(); // Prevent session fixation attacks
       $this->user_id = $_SESSION['user_id'] = $user->user_id;
       $this->username = $_SESSION['username'] = $user->username;
+      $this->is_admin = $_SESSION['is_admin'] = $user->is_admin;
       $this->last_login = $_SESSION['last_login'] = time();
     }
     return true;
@@ -34,14 +36,21 @@ class Session
     return isset($this->user_id) && $this->last_login_is_recent();
   }
 
+  public function is_admin()
+  {
+    return isset($this->is_admin) && this->is_admin == 1;                           
+  }
+
   //* Function to log user out
   public function logout()
   {
     unset($_SESSION['user_id']);
     unset($_SESSION['username']);
+    unset($_SESSION['is_admin']);
     unset($_SESSION['last_login']);
     unset($this->user_id);
     unset($this->username);
+    unset($this->is_admin);
     unset($this->last_login);
   
     return true;

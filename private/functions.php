@@ -44,3 +44,30 @@ function is_get_request()
 {
   return $_SERVER['REQUEST_METHOD'] == 'GET';
 }
+
+//* Redirect to user to the login page, if user isn't logged in
+function require_login()
+{
+  global $session;
+
+  if (!$session->is_logged_in()) {
+    redirect_to(url_for('/admin/login.php'));
+  }
+}
+
+//* Check to see if the user is logged in , same function as require_login()
+//* but don't redirect the user
+function logged_in() 
+{
+  global $session;
+
+  return $session->is_logged_in();
+}
+
+//* Check to see if the user has admin role
+function user_admin() 
+{
+  global $session;
+  echo $session->is_admin();
+  return $session->is_admin();
+}
