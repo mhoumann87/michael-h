@@ -22,9 +22,9 @@ if (!isset($page_title)) {
   <img src="<?php echo url_for('/assets/images/logo.svg'); ?>" alt="logo" />
   </div>
   
-  <nav>
-    <p>Navigation</p>
-  </nav>
+
+  <?php include SHARED_PATH.'/admin_nav.php'; ?>
+
 </header>
 
 <div class="container">
