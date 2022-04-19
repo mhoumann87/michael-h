@@ -2,6 +2,8 @@
 
 <?php
 
+require_login();
+
 $page_title = '- Show User';
 
 // Get the id for the user that sent the request
