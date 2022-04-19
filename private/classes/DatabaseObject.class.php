@@ -39,9 +39,18 @@ class DatabaseObject
       $this->id = self::$db->insert_id;
     }
     return $result;
-  }
+  } // create()
 
   //* Read
+
+  //* Find all posts in the database
+  static public function find_all()
+  {
+    $sql  = "SELECT * FROM ".static::$table_name;
+
+    return static::find_by_sql($sql);
+  }// find_all()
+
 
   //* Find single post by the id
   static public function find_by_id($id)
@@ -56,7 +65,7 @@ class DatabaseObject
     } else {
       return false;
     }
-  }
+  }// find_by_id()
 
   //* Find post by SQL, utility function for every SQL call
   static protected function find_by_sql($sql)
@@ -78,7 +87,7 @@ class DatabaseObject
 
     // Return the array
     return $obj_array;
-  }
+  }// find_by_sql()
 
   // Update
 
