@@ -12,7 +12,7 @@ class Session
   
   public function __construct()
   {
-    session_start(); // turn on session when a new session is instantiated
+    session_start(); // turn on session when a new Session is instantiated
     $this->check_stored_login();
   }
 
@@ -36,9 +36,8 @@ class Session
     return isset($this->user_id) && $this->last_login_is_recent();
   }
 
-  public function is_admin()
-  {
-    return isset($this->is_admin) && this->is_admin == 1;                           
+  public function is_admin() {
+    echo $this->is_logged_in();
   }
 
   //* Function to log user out
