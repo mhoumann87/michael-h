@@ -36,10 +36,6 @@ class Session
     return isset($this->user_id) && $this->last_login_is_recent();
   }
 
-  public function is_admin() {
-    echo $this->is_logged_in();
-  }
-
   //* Function to log user out
   public function logout()
   {
