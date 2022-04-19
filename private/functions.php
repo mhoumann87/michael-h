@@ -64,10 +64,9 @@ function logged_in()
   return $session->is_logged_in();
 }
 
-//* Check to see if the user has admin role
-function user_admin() 
+//* Check to see if the user have administrator privileges.
+//* Should be checked in Session.class, but is can't get to work
+function is_admin()
 {
-  global $session;
-  echo $session->is_admin();
-  return $session->is_admin();
+  return logged_in() && $_SESSION['is_admin'];
 }
