@@ -2,7 +2,7 @@
 
 <?php
 
-require_login();
+//require_login();
 
 $page_title = '- Show User';
 
@@ -13,12 +13,11 @@ $logged_in_user = $_SESSION['user_id'];
 
 // If we don't get an id, return user to users front page
 if (!$id) {
-  redirect_to(url_for('/admin/users/index.php'));
-} 
-
-// If it is not an admin, we only want the user to see own page
-if ($id !== $logged_in_user && !is_admin()) {
+  redirect_to(url_for('/admin/index.php'));
+} elseif ($id != $logged_in_user && !is_admin()) {
+  // If it is not an admin, we only want the user to see own page
   redirect_to(url_for('/admin/users/show.php?id='.$logged_in_user));
+  echo 'We would now be redirecting';
 }
 
 // Find the user in the database and assign it to the user variable
