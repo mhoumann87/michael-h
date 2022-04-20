@@ -8,12 +8,18 @@ $page_title = '- Show User';
 
 // Get the id for the user that sent the request
 $id = $_GET['id'] ?? '';
+$logged_in_user = $_SESSION['user_id'];
 
 
 // If we don't get an id, return user to users front page
 if (!$id) {
   redirect_to(url_for('/admin/users/index.php'));
 } 
+
+// If it is not an admin, we only want the user to see own page
+if ($id !== $logged_in_user && !is_admin()) {
+  redirect_to(url_for('/admin/users/show.php?id='.$logged_in_user));
+}
 
 // Find the user in the database and assign it to the user variable
 $user = User::find_by_id($id);
