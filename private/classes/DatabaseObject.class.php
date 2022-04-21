@@ -90,6 +90,34 @@ class DatabaseObject
   }// find_by_sql()
 
   // Update
+  protected function update()
+  {
+    // Validate input
+    $this->validate();
+    // If we have validation errors, show them on page and stop the update
+    if (!empty($this->errors)) {
+      return false;
+    }
+
+    // Collect and "clean" the info from the page
+    $attributes = $this->sanitized_attributes();
+    $attribute_pairs = [];
+    // Split attributes in to keys and values
+    foreach ($attributes as $key =>$value) {
+      $attribute_pairs[] = "{$key}='{$value}'";
+    }
+
+    //* insert the update in the database
+    $sql  = "UPDATE ".static::$table_name." SET ";
+    $sql .= join(', '.$attribute_pairs);
+    $sql .= " WHERE id='".self::$db->escape_string($this->user_id)."' ";
+    $sql .= "LIMIT 1";
+
+    $result = self::$db->query($sql);
+    return $result;
+    
+  }
+  
 
   // Delete
 
