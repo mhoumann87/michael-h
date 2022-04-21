@@ -88,11 +88,24 @@ class User extends DatabaseObject
     return password_verify($password, $this->hashed_password);
   }
 
-  //* Update info with the hashed password
+  //* Insert the hashed password in the information
   protected function create()
   {
     $this->set_hashed_password();
     return parent::create();
+  }
+
+  //* Check to see if the password is changed on edit
+  protected function update()
+  {
+    if ($this->password != '') {
+      // the password is changed and should be validated and hashed
+      $this->set_hashed_password()
+    } else {
+      // the password is not changed, so we don't need to validate and hash
+      $this->password_required = false;
+    }
+    return parent::update();
   }
 
   //* Function to use for validation of uniqueness
