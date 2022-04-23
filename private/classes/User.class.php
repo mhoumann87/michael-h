@@ -42,7 +42,7 @@ class User extends DatabaseObject
       $this->errors[] = "Username can't be blank";
     } elseif(!has_length($this->username, array('min' => 6))) {
       $this->errors[] = "Username must be at least 6 characters";
-    } elseif(!has_unique_entries('username', $this->username, $this->id ?? 0)) {
+    } elseif(!has_unique_entries('username', $this->username, $this->user_id ?? 0)) {
       $this->errors[] = 'Username is already in use, please choose another';
     }
 
@@ -50,7 +50,7 @@ class User extends DatabaseObject
       $this->errors[] = "Email can't be blank";
     } elseif (!has_valid_email_format($this->email)) {
       $this->errors[] = "Please enter a valid email address";
-    } elseif (!has_unique_entries('email', $this->email, $this->id ?? 0)) {
+    } elseif (!has_unique_entries('email', $this->email, $this->user_id ?? 0)) {
       $this->errors[] = "Email is already in the database";
     }
 
@@ -67,13 +67,14 @@ class User extends DatabaseObject
       } elseif (!preg_match('/[0-9]/', $this->password)) {
         $this->errors[] = "Password must contain at least one number";
       }
+
+      if (is_blank($this->confirm_password)) {
+        $this->errors[] = "Confirm password can't be blank";
+      } elseif ($this->confirm_password !== $this->password) {
+        $this->errors[] = "Confirm password and password must be the same";
+      }
     }
 
-    if (is_blank($this->confirm_password)) {
-      $this->errors[] = "Confirm password can't be blank";
-    } elseif ($this->confirm_password !== $this->password) {
-      $this->errors[] = "Confirm password and password must be the same";
-    }
   } // end validate()
 
   //* Function to hash the password before inserting it in the database
@@ -96,11 +97,11 @@ class User extends DatabaseObject
   }
 
   //* Check to see if the password is changed on edit
-  protected function update()
+  public function update()
   {
     if ($this->password != '') {
       // the password is changed and should be validated and hashed
-      $this->set_hashed_password()
+      $this->set_hashed_password();
     } else {
       // the password is not changed, so we don't need to validate and hash
       $this->password_required = false;
