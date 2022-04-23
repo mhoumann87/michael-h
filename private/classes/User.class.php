@@ -97,7 +97,7 @@ class User extends DatabaseObject
   }
 
   //* Check to see if the password is changed on edit
-  public function update()
+  protected function update()
   {
     if ($this->password != '') {
       // the password is changed and should be validated and hashed

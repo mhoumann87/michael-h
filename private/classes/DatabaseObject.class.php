@@ -91,7 +91,7 @@ class DatabaseObject
   }// find_by_sql()
 
   // Update
-  public function update()
+  protected function update()
   {
     // Validate user input
     if (!empty($this->errors)) {
@@ -122,6 +122,7 @@ class DatabaseObject
   
 
   // Delete
+
 
   // "Service" functions to the CRUD functions
 
