@@ -31,6 +31,7 @@ class DatabaseObject
     $sql .= ") VALUES ('";
     $sql .= join("', '", array_values($attributes));
     $sql .= "')";
+    //echo $sql;
 
     $result = self::$db->query($sql);
 
@@ -90,33 +91,34 @@ class DatabaseObject
   }// find_by_sql()
 
   // Update
-  protected function update()
+  public function update()
   {
-    // Validate input
-    $this->validate();
-    // If we have validation errors, show them on page and stop the update
+    // Validate user input
     if (!empty($this->errors)) {
+      var_dump($this->errors);
       return false;
     }
 
-    // Collect and "clean" the info from the page
+    // Clear the input
     $attributes = $this->sanitized_attributes();
+
+    // Make an array for the input
     $attribute_pairs = [];
-    // Split attributes in to keys and values
-    foreach ($attributes as $key =>$value) {
+    foreach ($attributes as $key => $value) {
       $attribute_pairs[] = "{$key}='{$value}'";
     }
 
-    //* insert the update in the database
+    // Upload to the database
     $sql  = "UPDATE ".static::$table_name." SET ";
-    $sql .= join(', '.$attribute_pairs);
-    $sql .= " WHERE id='".self::$db->escape_string($this->user_id)."' ";
+    $sql .= join(', ', $attribute_pairs);
+    $sql .= " WHERE user_id='".self::$db->escape_string($this->user_id)."' ";
     $sql .= "LIMIT 1";
+
+    echo $sql;
 
     $result = self::$db->query($sql);
     return $result;
-    
-  }
+  }// update();
   
 
   // Delete
@@ -127,10 +129,12 @@ class DatabaseObject
   public function save()
   {
     // A new record will not have an user_id yet
-    if (isset($this->id)) {
+    if (isset($this->user_id)) {
       return $this->update();
+      //return 'update';
     } else {
       return $this->create();
+      //return 'create';
     }
   }
 
@@ -180,6 +184,17 @@ protected function sanitized_attributes()
     $sanitized[$key] = self::$db->escape_string($value);
   }
   return $sanitized;
+}
+
+//* Function to put in new values from the user on the update page
+public function merge_attributes($args) 
+{
+  foreach ($args as $key => $value) {
+    if (property_exists($this, $key) && !is_null($value)) {
+      $this->$key = $value;
+    }
+  }
+  //var_dump($args);
 }
 
 } // end DatabaseObject
