@@ -19,7 +19,7 @@ if (!$id) {
 } 
 
 //* Find the user we want to edit
-$user = User::find_by_id($id);
+$user = User::find_by_id(h($id));
 //var_dump($user);
 
 //* If it is a post request, we update the user
@@ -27,10 +27,17 @@ if (is_post_request()) {
 
   // We get the info from the form
   $args = $_POST['user'];
-  $user->merge_attributes();
-
+  $user->merge_attributes($args);
+  
+  //var_dump($user);
   // Update the database
-  $user->save();
+  $result = $user->save();
+
+if ($result === true) {
+    $session->message("User {$user->username} was updated successfully");
+    redirect_to(url_for('/admin/users/show.php?id='.$id));
+  }
+  
 }
 
 
@@ -47,7 +54,7 @@ if (is_post_request()) {
 
 <main>
 
-<?php echo display_errors(); ?>
+<?php echo display_errors($user->errors); ?>
 
   <form action="<?php echo url_for('/admin/users/edit.php?id='.$user->user_id); ?>" method="post">
 
