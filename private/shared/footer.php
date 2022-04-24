@@ -1,4 +1,4 @@
-</main>
+</div>
 
 <footer>
   <h1>This is just the test footer</h1>

@@ -1,0 +1,1 @@
+<h1>Hastly made news page</h1>
