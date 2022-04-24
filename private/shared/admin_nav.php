@@ -13,7 +13,7 @@
     </li>
 
     <li>
-      <a href="<?php echo url_for('/admin/users/create.php'); ?>">Sign Up</a>
+      <a href="<?php echo url_for('/admin/users/new.php'); ?>">Sign Up</a>
     </li>
 
   <?php } else { ?>

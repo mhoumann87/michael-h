@@ -16,8 +16,13 @@ if (is_post_request()) {
   // with session_message() and redirect the user to the user page
   if ($result === true) {
     $new_id = $user->id;
-    $session->message('User was created successfully.');
-    redirect_to(url_for('/admin/users/show.php?id='.$new_id));
+    
+    if (is_admin()) {
+      $session->message('User was created successfully.');
+      redirect_to(url_for('/admin/users/index.php'));
+    } else {
+      redirect_to(url_for('/admin/login.php'));
+    }
   }
 
   // If we get a result that are false, we just automatically show the errors.
