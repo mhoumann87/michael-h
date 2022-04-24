@@ -122,9 +122,19 @@ class DatabaseObject
   
 
   // Delete
+  public function delete()
+  {
+    $sql  = "DELETE FROM ".static::$table_name." ";
+    $sql .= "WHERE user_id='".self::$db->escape_string($this->user_id)."' ";
+    $sql .= "LIMIT 1";
+
+    $result = self::$db->query($sql);
+
+    return $result;
+  }// delete();
 
 
-  // "Service" functions to the CRUD functions
+  //* "Service" functions to the CRUD functions
 
   // save() looks at the input and "decide" if it is an update or a new create
   public function save()
