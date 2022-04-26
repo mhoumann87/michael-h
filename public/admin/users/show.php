@@ -45,6 +45,16 @@ if (!$user) {
   <p>Email: <?php echo h($user->email) ?></p>
   <p>Role: <?php echo ($user->is_admin) ? 'Admin' : 'User'; ?></p>
 
+<?php if (is_admin()) { ?>
+  
+  <a href="<?php echo url_for('/admin/users/index.php'); ?>">Back to list</a>
+
+<?php } ?>
+
+  <a href="<?php echo url_for('/admin/users/edit.php?id='.$id); ?>">Edit <?php echo h($user->username); ?></a>
+
+  <a href="<?php echo url_for('/admin/users/delete.php?id='.$id); ?>">Delete <?php echo h($user->username); ?></a>
+
 </main>
 
 <?php include SHARED_PATH.'/footer.php'; ?>
