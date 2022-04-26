@@ -60,9 +60,19 @@ if ($result === true) {
 
 <?php include 'form_fields.php'; ?>
 
-<input type="submit" value="Edit <?php echo h($user->username);?>">
+<input type="submit" value="Update <?php echo h($user->username);?>">
 
 </form>
+
+<?php if (is_admin()) { ?>
+
+  <a href="<?php echo url_for('/admin/users/index.php'); ?>">Back to List</a>
+
+<?php } ?>
+
+<a href="<?php echo url_for('/admin/users/show.php?id='.$id); ?>">Back to <?php echo h($user->username)?></a>
+
+<a href="<?php echo url_for('/admin/users/delete.php?id='.$id); ?>">Delete <?php echo h($user->username)?></a>
 
 </main>
 
