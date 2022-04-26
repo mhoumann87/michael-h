@@ -1,12 +1,7 @@
 <nav>
 
-<?php 
-  if (logged_in()) {
-    echo $_SESSION['username'];
-  }
-?>
 
-<ul>
+<ul class="flex" style="--justify: space-between; --gap: 2rem;"> 
   <?php if (!logged_in()) { ?>
     <li>
       <a href="<?php echo url_for('/admin/login.php');?>">Login</a>
@@ -33,6 +28,8 @@
     <li>
       <a href="<?php echo url_for('/admin/logout.php'); ?>">Logout</a>
     </li>
+
+    <li><?php echo $_SESSION['username']; ?></li>
   <?php } ?>
 
   </ul>

@@ -16,6 +16,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>michael-h.dk <?php echo $page_title; ?></title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Staatliches&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="<?php echo url_for('/assets/css/styles.css'); ?>">
 </head>
 

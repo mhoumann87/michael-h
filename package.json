@@ -22,7 +22,6 @@
     "url": "https://github.com/mhoumann87/michael-h/issues"
   },
   "homepage": "https://github.com/mhoumann87/michael-h#readme",
-  "dependencies": {},
   "devDependencies": {
     "autoprefix": "^1.0.1",
     "postcss": "^8.4.12",
