@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "My private website for my portfolio",
   "main": "public/index.php",
-  "scripts": {
-    "postcss": "postcss src/styles.css -d public/assets/css/ --watch"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mhoumann87/michael-h.git"
@@ -13,8 +11,7 @@
   "keywords": [
     "php",
     "portfolio",
-    "javascript",
-    "postcss"
+    "javascript"
   ],
   "author": "Michael Houmann",
   "license": "MIT",
@@ -22,11 +19,5 @@
     "url": "https://github.com/mhoumann87/michael-h/issues"
   },
   "homepage": "https://github.com/mhoumann87/michael-h#readme",
-  "devDependencies": {
-    "autoprefix": "^1.0.1",
-    "postcss": "^8.4.12",
-    "postcss-cli": "^9.1.0",
-    "postcss-import": "^14.1.0",
-    "postcss-preset-env": "^7.4.3"
-  }
+  "devDependencies": {}
 }
