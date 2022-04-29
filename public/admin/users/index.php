@@ -23,11 +23,14 @@ include_once SHARED_PATH.'/admin_header.php';
 
 <h2>All Users</h2>
 
+<main class="grid">
+
 <aside>
   <?php include './navigation.php'; ?>
 </aside>
 
-<main>
+<section class="content">
+
   <table>
     <tr>
       <th>User Id</th>
@@ -53,6 +56,9 @@ include_once SHARED_PATH.'/admin_header.php';
 
     <?php } ?>
   </table>
+
+  </section>
+
 </main>
 
 <?php include SHARED_PATH.'/footer.php';
