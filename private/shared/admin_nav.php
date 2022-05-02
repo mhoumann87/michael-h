@@ -1,4 +1,4 @@
-<nav role="primary-nav">
+<nav role="primary-nav" class="flex">
 
 <ul class="flex" style="--justify: space-between; --gap: 2rem;"> 
   <?php if (!logged_in()) { ?>
@@ -28,9 +28,15 @@
       <a href="<?php echo url_for('/admin/logout.php'); ?>">Logout</a>
     </li>
 
-    <li><?php echo $_SESSION['username']; ?></li>
   <?php } ?>
 
   </ul>
+
+  <?php if(logged_in()) { ?>
+
+    <?php echo $_SESSION['username']; ?>
+
+  <?php } ?>
+  
 </nav>
 
