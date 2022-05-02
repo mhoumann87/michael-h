@@ -1,14 +1,37 @@
-:root {
-  /* Colors */
+/* ========================================== 
+  * Custom variables
+===========================================*/
 
-  /* Fonts */
-  --ff-headings: 'Poiret One', cursive;
-  --ff-body: 'Open Sans', sans-serif;
+:root {
+  /** Colors */
+  --clr-dark: 248, 95%, 8%;
+  --clr-light: 67, 24%, 80%;
+  --clr-dark-yellow: 67, 59%, 64%;
+  --clr-med-yellow: 67, 53%, 68%;
+  --clr-light-yellow: 68, 39%, 76%;
+
+  /** "Service" colors */
+  --clr-success: 103, 43%, 41%;
+  --clr-danger: 0, 84%, 33%;
+  --clr-primary: 224, 100%, 30%;
+
+  /** Fonts */
+  --ff-body: 'PT Serif', serif;
+  --ff-headings: 'Montserrat', sans-serif;
+
+  --fs-400: 1.25rem;
+  --fs-700: 1.75rem;
+  --fs-800: 2.25rem;
+  --fs-900: 3rem;
+
+  --fw-light: 200;
+  --fw-regular: 400;
+  --fw-bold: 700;
 }
-/*
- * Resets based on:
- * https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
-*/
+/* =====================================================================
+  * Resets based on:
+  * https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
+=======================================================================*/
 /* Use box-sizing for all elements */
 *,
 *::before,
@@ -20,7 +43,7 @@ html {
   line-sizing: normal;
 }
 /* Remove space around the page */
-bode {
+body {
   margin: 0;
 }
 /* Maintain 'hidden' behaviour when overriding 'display' values  */
@@ -48,7 +71,7 @@ h6 {
 }
 /* Keep h1 margins consistent even when nested */
 h1 {
-  margin: 0.67em 0;
+  margin: 0;
 }
 /* Remove owerflow */
 pre {
@@ -182,7 +205,7 @@ body {
 /* An element that doesn't have a class get default styles */
 a:not([class]) {
   -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 /* Inherit fonts for inputs and butons */
 input,
@@ -191,33 +214,103 @@ textarea,
 select {
   font: inherit;
 }
-/* Utility classes */
+
+/* =================================
+  * Utility classes 
+  ================================= */
+
 .grid {
   display: grid;
+  gap: var(--gap, 1rem);
 }
+
 .flex {
-  --dir: row;
-  --justify: space-between;
-  --align: canter;
-  --gap: 1em;
   display: flex;
-  flex-direction: var(--dir);
-  justify-content: var(--justify);
-  align-items: var(--align);
-  gap: var(--gap);
+  flex-direction: var(--dir, row);
+  justify-content: var(--justify, space-between);
+  align-items: var(--align, center);
+  gap: var(--gap, 1em);
 }
+
+.container {
+  width: min(100% - 2rem, 75em);
+  margin-inline: auto;
+}
+
+main {
+  grid-template-columns: auto 1fr;
+}
+
+/* =============================================
+  * Base styles
+==============================================*/
+
 body {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   font-family: 'Open Sans', sans-serif;
-  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  background-color: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark));
 }
+
 h1,
 h2,
 h3 {
-  font-family: 'Poiret One', cursive;
   font-family: var(--ff-headings);
+  font-weight: var(--fw-light);
 }
+
+h1 {
+  font-size: var(--fs-900);
+}
+
+h2 {
+  font-size: var(--fs-800);
+}
+
+h3 {
+  font-size: var(--fs-700);
+}
+
+header,
+footer {
+  background-color: hsl(var(--clr-light-yellow));
+}
+
 header .logo {
-    width: 200px;
-  }
+  width: 12.5rem;
+}
+
+footer {
+  --dir: column;
+  --justify: center;
+  --align: center;
+  padding-block: 1rem;
+}
+
+.social-icons {
+  --dir: row;
+  --gap: 2em;
+}
+
+footer svg {
+  width: 2rem;
+}
+
+/** Sodial colors */
+#github {
+  fill: #181717;
+}
+
+#linkedin {
+  fill: #0a66c2;
+}
+
+#twitter {
+  fill: #1da1f2;
+}
+
+#facebook {
+  fill: #1877f2;
+}
