@@ -60,33 +60,40 @@ if (is_post_request()) {
 
 <?php include SHARED_PATH.'/admin_header.php'; ?>
 
-<h2>Delete User <?php echo h($user->username); ?></h2>
-
-<aside>
-  <?php include 'navigation.php'; ?>
-</aside>
-
 <main>
 
-<p>User Id: <?php echo h($user->user_id); ?></p>
-<p>Username: <?php echo h($user->username); ?></p>
-<p>Email: <?php echo h($user->email); ?></p>
+  <h2>Delete User <?php echo h($user->username); ?></h2>
 
-<p>Are you sure you wan't to delete this user account?</p>
+  <section class="grid content-grid">
 
-<form action="<?php url_for('/admin/users/delete.php?id='.h($user->user_id)); ?>" method="post">
+    <aside>
+      <?php include 'navigation.php'; ?>
+    </aside>
 
-  <input type="submit" value="Delete User">
+    <section class="content">
 
-  <?php if (is_admin()) { ?>
-    <a href="<?php echo url_for('/admin/users/index.php');?>">Back to list</a>
-  <?php } else { ?>
-    <a href="<?php echo url_for('/admin/users/show.php?id='.h($user->user_id)); ?>">Back To User</a>
-  <?php } ?>
+      <p>User Id: <?php echo h($user->user_id); ?></p>
+      <p>Username: <?php echo h($user->username); ?></p>
+      <p>Email: <?php echo h($user->email); ?></p>
 
-</form>
+      <p>Are you sure you wan't to delete this user account?</p>
 
+      <form 
+        action="<?php url_for('/admin/users/delete.php?id='.h($user->user_id)); ?>" method="post">
 
+        <input type="submit" value="Delete User">
+
+          <?php if (is_admin()) { ?>
+            <a href="<?php echo url_for('/admin/users/index.php');?>">Back to list</a>
+          <?php } else { ?>
+            <a href="<?php echo url_for('/admin/users/show.php?id='.h($user->user_id)); ?>">Back To User</a>
+          <?php } ?>
+
+      </form>
+
+    </section>
+
+  </section>
 
 </main>
 

@@ -37,24 +37,31 @@ if (is_post_request()) {
 
 <?php include SHARED_PATH.'/admin_header.php'; ?>
 
-
-<h2>Create User</h2>
-
-<aside>
-  <?php include './navigation.php'; ?>
-</aside>
-
 <main>
 
-<?php echo display_errors($user->errors); ?>
+  <h2>Create User</h2>
 
-<form action="<?php echo url_for('/admin/users/new.php'); ?>" method="post">
+  <section class="grid content-grid">
+  
+    <aside>
+      <?php include './navigation.php'; ?>
+    </aside>
 
-  <?php include './form_fields.php'; ?>
+    <section class="content">
 
-  <input class="btn" type="submit" value="Create User" />
-</form>
+      <?php echo display_errors($user->errors); ?>
+
+        <form action="<?php echo url_for('/admin/users/new.php'); ?>" method="post">
+
+          <?php include './form_fields.php'; ?>
+
+          <input class="btn" type="submit" value="Create User" />
+
+        </form>
+      
+    </section>
+
+  </section>
 </main>
-
 
 <?php include SHARED_PATH.'/footer.php'; ?>

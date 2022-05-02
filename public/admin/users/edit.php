@@ -46,33 +46,48 @@ if ($result === true) {
 
 <?php include SHARED_PATH.'/admin_header.php'; ?>
 
-<h2>Edit <?php echo h($user->username); ?></h2>
-
-<aside>
-  <?php include 'navigation.php'; ?>
-</aside>
-
 <main>
 
-<?php echo display_errors($user->errors); ?>
+  <h2>Edit <?php echo h($user->username); ?></h2>
 
-  <form action="<?php echo url_for('/admin/users/edit.php?id='.$user->user_id); ?>" method="post">
+  <section class="grid content-grid">
 
-<?php include 'form_fields.php'; ?>
+    <aside>
+      <?php include 'navigation.php'; ?>
+    </aside>
 
-<input type="submit" value="Update <?php echo h($user->username);?>">
+    <section class="content">
+  
+      <?php echo display_errors($user->errors); ?>
 
-</form>
+      <form 
+        action="<?php echo url_for('/admin/users/edit.php?id='.$user->user_id); ?>" method="post">
 
-<?php if (is_admin()) { ?>
+          <?php include 'form_fields.php'; ?>
 
-  <a href="<?php echo url_for('/admin/users/index.php'); ?>">Back to List</a>
+          <input type="submit" value="Update <?php echo h($user->username);?>">
 
-<?php } ?>
+      </form>
 
-<a href="<?php echo url_for('/admin/users/show.php?id='.$id); ?>">Back to <?php echo h($user->username)?></a>
+      <?php if (is_admin()) { ?>
 
-<a href="<?php echo url_for('/admin/users/delete.php?id='.$id); ?>">Delete <?php echo h($user->username)?></a>
+        <a href="<?php echo url_for('/admin/users/index.php'); ?>">Back to List</a>
+
+      <?php } ?>
+
+      <a 
+        href="<?php echo url_for('/admin/users/show.php?id='.$id); ?>">
+        Back to <?php echo h($user->username)?>
+      </a>
+
+      <a 
+        href="<?php echo url_for('/admin/users/delete.php?id='.$id); ?>">
+        Delete <?php echo h($user->username)?>
+      </a>
+    
+    </section>
+
+  </section>
 
 </main>
 

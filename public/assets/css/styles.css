@@ -237,7 +237,7 @@ select {
   margin-inline: auto;
 }
 
-main {
+.content-grid {
   grid-template-columns: auto 1fr;
 }
 

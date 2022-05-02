@@ -32,28 +32,38 @@ if (!$user) {
 
 <?php include SHARED_PATH.'/admin_header.php'; ?>
 
-<h2>Show User</h2>
-
-<aside>
-  <?php include 'navigation.php'; ?>
-</aside>
-
 <main>
 
-  <h3>Username: <?php echo h($user->username); ?></h3>
-  <p>ID: <?php echo h($user->user_id); ?></p>
-  <p>Email: <?php echo h($user->email) ?></p>
-  <p>Role: <?php echo ($user->is_admin) ? 'Admin' : 'User'; ?></p>
+  <h2>Show User</h2>
 
-<?php if (is_admin()) { ?>
-  
-  <a href="<?php echo url_for('/admin/users/index.php'); ?>">Back to list</a>
+  <section class="grid content-grid">
 
-<?php } ?>
+    <aside>
+      <?php include 'navigation.php'; ?>
+    </aside>
 
-  <a href="<?php echo url_for('/admin/users/edit.php?id='.$id); ?>">Edit <?php echo h($user->username); ?></a>
+    <section class="content">
 
-  <a href="<?php echo url_for('/admin/users/delete.php?id='.$id); ?>">Delete <?php echo h($user->username); ?></a>
+      <h3>Username: <?php echo h($user->username); ?></h3>
+      <p>ID: <?php echo h($user->user_id); ?></p>
+      <p>Email: <?php echo h($user->email) ?></p>
+      <p>Role: <?php echo ($user->is_admin) ? 'Admin' : 'User'; ?></p>
+
+    <?php if (is_admin()) { ?>
+      <a href="<?php echo url_for('/admin/users/index.php'); ?>">Back to list</a>
+    <?php } ?>
+
+      <a href="<?php echo url_for('/admin/users/edit.php?id='.$id); ?>">
+        Edit <?php echo h($user->username); ?>
+      </a>
+
+      <a href="<?php echo url_for('/admin/users/delete.php?id='.$id); ?>">
+        Delete <?php echo h($user->username); ?>
+      </a>
+
+    </section>
+
+  </section>
 
 </main>
 
