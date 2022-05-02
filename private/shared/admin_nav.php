@@ -1,6 +1,5 @@
 <nav role="primary-nav">
 
-
 <ul class="flex" style="--justify: space-between; --gap: 2rem;"> 
   <?php if (!logged_in()) { ?>
     <li>
