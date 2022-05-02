@@ -58,6 +58,8 @@ if (is_post_request()) {
 
 </form>
 
+<a class="btn" href="<?php echo url_for('/admin/users/new.php'); ?>">Sign Up</a>
+
 </main>
 
 <?php include SHARED_PATH.'/footer.php'; ?>
