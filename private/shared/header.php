@@ -23,16 +23,24 @@
   <link rel="stylesheet" href="<?php echo url_for('/assets/css/styles.css'); ?>">
 </head>
 
-<body>
+<body class="grid"> 
 
-<header>
-  <div class="logo">
-    <img src="<?php echo url_for('/assets/images/logo.svg'); ?>" alt="logo" />
-  </div>
+  <header>
 
-  <nav>
-    <h2>Navigation</h2>
-  </nav>
-</header>
+    <section class="content container flex">
 
-<div class="container">
+      <div class="logo">
+        <img src="<?php echo url_for('/assets/images/logo.svg'); ?>" alt="logo" />
+      </div>
+
+      <nav>
+
+        <?php include SHARED_PATH.'/nav.php'; ?>
+
+      </nav>
+
+    </section>
+  
+  </header>
+
+  <div class="container">
