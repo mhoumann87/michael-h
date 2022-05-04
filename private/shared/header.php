@@ -1,9 +1,8 @@
 <?php
 
-  if(!isset($page_title))
-  {
+if (!isset($page_title)) {
     $page_title = ' - Web Developer';
-  }
+}
 
 ?>
 
@@ -23,7 +22,8 @@
   <link rel="stylesheet" href="<?php echo url_for('/assets/css/styles.css'); ?>">
 </head>
 
-<body class="grid"> 
+<body class="grid">
+  <a href="#main" class="skip-to-content">Skip to main content</a>
 
   <header>
 
@@ -35,12 +35,12 @@
 
       <nav>
 
-        <?php include SHARED_PATH.'/nav.php'; ?>
+        <?php include SHARED_PATH . '/nav.php';?>
 
       </nav>
 
     </section>
-  
+
   </header>
 
   <div class="container">
