@@ -1,5 +1,13 @@
 <nav role="primary-navigation">
 
+<button
+  class="mobile-nav-toggle"
+  aria-controls="primary-navigation"
+  aria-expanded="false"
+  >
+  <span class="sr-only">Menu</span>
+</button>
+
   <ul class="flex" style="--gap: 2em">
 
     <li><a href="#">Home</a></li>
