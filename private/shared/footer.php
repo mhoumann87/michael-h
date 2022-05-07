@@ -1,5 +1,3 @@
-</div>
-
 <footer>
 
   <div class="container flex">

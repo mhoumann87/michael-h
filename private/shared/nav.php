@@ -1,4 +1,3 @@
-<nav role="primary-navigation">
 
 <button
   class="mobile-nav-toggle"
@@ -8,8 +7,14 @@
   <span class="sr-only">Menu</span>
 </button>
 
-  <ul class="flex" style="--gap: 2em">
+<nav role="primary-navigation">
 
+  <ul
+    id="primary-navigation"
+    class="flex primary-navigation"
+    style="--gap: 2em"
+    data-visible="false"
+    >
     <li><a href="#">Home</a></li>
     <li><a href="#">Portfolio</a></li>
     <li><a href="#">News</a></li>

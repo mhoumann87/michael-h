@@ -42,5 +42,3 @@ if (!isset($page_title)) {
     </section>
 
   </header>
-
-  <div class="container">

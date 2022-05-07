@@ -331,22 +331,43 @@ p {
   font-size: var(--fs-400);
 }
 
-header,
-footer {
-  background-color: hsl(var(--clr-light-yellow));
-}
+/** Public header and nav - responsive */
 
 header .logo {
   width: 12.5rem;
 }
 
-/** Navigation - responsive */
+header {
+  position: relative;
+  background-color: hsl(var(--clr-light-yellow));
+}
+
+/** Glassmorphism effect for background - don't work right now in FireFox */
+/*@supports (backdrop-filter: blur(1.5rem)) {
+  .header {
+    backdrop-filter: blur(1.5rem);
+    -webkit-backdrop-filter: blur(1.5rem);
+    background: hsl(var(--clr-light-yellow), 0.05);
+  }
+}
+*/
+
+/**  Public frontpage */
+
+.hero {
+  position: relative;
+  padding-block-start: 5rem;
+  background-image: url('../images/pencil.jpg');
+  background-position: center center;
+  min-height: 80vh;
+}
 
 footer {
   --dir: column;
   --justify: center;
   --align: center;
   padding-block: 1rem;
+  background-color: hsl(var(--clr-light-yellow));
 }
 
 .social-icons {
