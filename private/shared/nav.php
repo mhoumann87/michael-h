@@ -12,7 +12,6 @@
   <ul
     id="primary-navigation"
     class="flex primary-navigation"
-    style="--gap: 2em"
     data-visible="false"
     >
     <li><a href="#">Home</a></li>
