@@ -33,11 +33,27 @@ if (!isset($page_title)) {
         <img src="<?php echo url_for('/assets/images/logo.svg'); ?>" alt="logo" />
       </div>
 
-      <nav role="primary-navigation">
+      <input
+        type="checkbox"
+        name="open-menu"
+        class="open-menu"
+        id="open-menu"
+        role="button"
+        />
+
+      <label for="open-menu" role="button" class="menu-icon-toggle">
+        <span class="sr-only">Menu</menu>
+
+        <div class="menu-line line1 diagonal"></div>
+        <div class="menu-line horizontal"></div>
+        <div class="menu-line line2 diagonal"></div>
+      </label>
+
+      <nav role="primary-navigation" class="primary-navigation">
 
         <ul
           id="primary-navigation"
-          class="flex primary-navigation"
+          class="flex primary-navigation__list"
           data-visible="false"
         >
 
