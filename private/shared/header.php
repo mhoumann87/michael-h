@@ -42,7 +42,7 @@ if (!isset($page_title)) {
         />
 
       <label for="open-menu" role="button" class="menu-icon-toggle">
-        <span class="sr-only">Menu</menu>
+        <span class="sr-only">Menu</span>
 
         <div class="menu-line line1 diagonal"></div>
         <div class="menu-line horizontal"></div>
