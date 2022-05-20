@@ -266,6 +266,7 @@ select {
 }
 
 .content-grid {
+  --gap: 2em;
   grid-template-columns: auto 1fr;
 }
 
@@ -346,6 +347,7 @@ header {
   padding-block: 0.65em;
 }
 
+/*
 .primary-navigation {
   --dir: column;
   width: 25vw;
@@ -427,6 +429,8 @@ input[type='checkbox']:checked ~ .primary-navigation {
 .menu-line:not(:first-child) {
   margin-top: 5px;
 }
+
+*/
 
 /**  Public frontpage */
 
