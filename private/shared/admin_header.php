@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($page_title)) {
-  $page_title = '';
+    $page_title = '';
 }
 
 ?>
@@ -29,14 +29,13 @@ if (!isset($page_title)) {
     <div class="logo">
     <img src="<?php echo url_for('/assets/images/logo.svg'); ?>" alt="logo" />
     </div>
-  
-    <?php include SHARED_PATH.'/admin_nav.php'; ?>
+
+    <?php include SHARED_PATH . '/admin_nav.php';?>
   </div>
 
 </header>
 
-<div class="container">
 
-<?php echo display_session_message();?> 
+<?php echo display_session_message(); ?>
 
 
