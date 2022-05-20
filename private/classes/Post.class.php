@@ -30,6 +30,8 @@ class Post extends DatabaseObject
     public $headline;
     public $content;
     public $is_published;
+    public $need_change;
+    public $suggestions;
     protected $created;
     protected $published;
 
@@ -39,7 +41,9 @@ class Post extends DatabaseObject
         $this->image_id = $args['image_id'] ?? '';
         $this->headline = $args['headline'] ?? '';
         $this->content = $args['content'] ?? '';
-        $this->is_published = $args['is_published'] ?? '';
+        $this->suggestions = args['suggestions'] ?? '';
+        $this->need_change = $args['need_change'] ?? 0;
+        $this->is_published = $args['is_published'] ?? 0;
     }
 
     public function set_created()
