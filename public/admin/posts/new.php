@@ -8,6 +8,12 @@ require_login();
 
 if (is_post_request()) {
 
+    /** The post is saved and we try to collect all data and save in the database */
+
+    // * Add all user input to an array
+    $args = $_POST['post'];
+    // * Create an instance of Post and add data to it
+    $post = new Post($args);
 } else {
     $post = new Post;
 }
@@ -29,23 +35,12 @@ if (is_post_request()) {
     </aside>
 
     <form
-      action="<?php echo url_for('/admin/posts/new'); ?>"
+      action="<?php echo url_for('/admin/posts/new.php'); ?>"
       method="post">
 
-      <label for="headline">Headline:</label>
-      <input
-        type="text"
-        name="post[headline]"
-        value="<?php echo h($post->headline); ?>"
-        id="headline">
+      <?php include './form_fields.php';?>
 
-        <label for="content">Content:</label>
-        <textarea
-          name="post[content]"
-        id="content"
-        >
-        <?php echo h($post->content); ?>
-        </textarea>
+      <input type="submit" value="Save Post" />
 
     </form>
 
