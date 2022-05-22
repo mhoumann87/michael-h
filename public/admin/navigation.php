@@ -8,13 +8,9 @@
           </a>
           </li>
 
-          <li><a href="#">Create Post</a></li>
-
-        <?php if (is_admin()) {?>
-          <li><a href="<?php echo url_for('/admin/news/index.php'); ?>">
-            All Posts
-          </a></li>
-        <?php }?>
+          <li>
+            <a href="<?php echo url_for('/admin/posts/new.php') ?>">Create Post</a>
+          </li>
 
           <li>
             <a href="<?php echo url_for('/admin/users/show.php'); ?> ">

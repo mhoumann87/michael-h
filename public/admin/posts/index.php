@@ -4,6 +4,8 @@
 
 $title = is_admin() ? 'All Posts' : 'My Posts';
 
+require_login();
+
 $page_title = ' - ' . $title;
 
 ?>
