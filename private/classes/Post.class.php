@@ -41,7 +41,7 @@ class Post extends DatabaseObject
         $this->image_id = $args['image_id'] ?? '';
         $this->headline = $args['headline'] ?? '';
         $this->content = $args['content'] ?? '';
-        $this->suggestions = args['suggestions'] ?? '';
+        $this->suggestions = $args['suggestions'] ?? '';
         $this->need_change = $args['need_change'] ?? 0;
         $this->is_published = $args['is_published'] ?? 0;
     }
