@@ -7,6 +7,7 @@ class Image
     protected $upload_path;
     // Define allowed filetypes to check against during validation
     protected $allowed_mime_types = [
+        'image/php',
         'image/gif',
         'image/jpg',
         'image/jpeg',
@@ -54,6 +55,48 @@ class Image
         $this->tmp_file = $_FILES['post']['tmp_name']['image'] ?? '';
         $this->upload_error = $_FILES['post']['error']['image'] ?? '';
         $this->file_size = $_FILES['post']['size']['image'] ?? '';
+    }
+
+    // Returns the file extension of a file
+    public function get_file_extension($file_name)
+    {
+        $path_parts = pathinfo($file_name);
+        return $file_extension = $path_parts['extension'];
+    }
+
+    // Searches the contents for a file for a PHP embed tag
+    // The problem with this check is that file_get_contents() reade
+    // the entire file into memory and the searches it (large file = slow)
+    // Using fopen/fread might have better performance on large files.
+    // We are not using large files here, so this is ok.
+    protected function file_contains_php($file)
+    {
+        $contents = file_get_contents($file);
+        $position = strpos($contents, '<?php');
+        return $position !== false;
+    }
+
+    // Function to calculate the max file size
+    public function set_max_filesize($mb)
+    {
+        return $this->max_filesize = calculate_bytes_from_mb($mb);
+    }
+
+    // Set file path based on area it will be used
+    public function set_file_path($area)
+    {
+        return $this->file_path = PUBLIC_PATH . '/assets/images/' . $area;
+    }
+
+    protected function sanitize_file_name($name)
+    {
+        // Remove characters that could alter file path.
+        // Disallow spaces, because they causes other headaches.
+        // "." is allowed (e.g. "photo.jpg") but ".." is not.
+        $name = preg_replace('/([^A-Za-z=9_\.]|[\.{2}])/', '' . $name);
+        // basename() ensures a file name and not a path
+        $name = basename($name);
+        return $name;
     }
 
 } // Image class
