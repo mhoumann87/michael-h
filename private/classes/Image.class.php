@@ -98,5 +98,29 @@ class Image
         $name = basename($name);
         return $name;
     }
+// If we already have a file with the same name in the directory
+// add an index_number to the file nama
+    protected function check_file_name_exists($filename)
+    {
+        $new_filename = '';
+        $path = $this->file_path . '/' . $filename;
+
+        if (file_exists($path)) {
+            $index = 1;
+            $files = scandir($this->file_path);
+
+            do {
+                $parts = pathinfo($path);
+                $ext = $parts['extension'];
+                $part_name = $parts['filename'];
+                $new_filename = $part_name . '_' . $index++ . '.' . $ext;
+
+            } while (in_array($new_filename, $files));
+
+            return $new_filename;
+        } else {
+            return $filename;
+        }
+    }
 
 } // Image class
