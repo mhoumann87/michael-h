@@ -22,13 +22,50 @@
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+}
+
+.skip-to-content {
+  position: absolute;
+}
+
 body {
   background: var(--background);
   color: var(--text);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+/* utillity classes */
+.flex {
+  display: flex;
+  flex-direction: var(--flex-dir, row);
+  gap: var(--flex-gap, 1em);
+  justify-content: var(--flex-justify, space-between);
+  align-items: var(--flex-align, center);
+}
+
+.grid {
+  display: grid;
+}
+
+.wrapper {
+  grid-template-columns: minmax(calc(100% -1rem), 1100px);
+  margin-inline: auto;
 }
 
 /* Colors for social icons */
-
 #github {
   fill: #000000;
 }
