@@ -1,0 +1,46 @@
+:root {
+  /* Set site to accept dark mode */
+  color-scheme: light dark;
+
+  /* colors */
+  --clr-background-dark: hsl(75, 3%, 24%);
+  --clr-background-light: hsl(32, 50%, 90%);
+  --clr-fonts-dark: hsl(32, 50%, 90%);
+  --clr-fonts-light: hsl(75, 3%, 24%);
+  --clr-links: hsla(16, 79%, 48%, 0.8);
+  --clr-links-hover: hsl(16, 79%, 48%);
+  --clr-light-blue: hsl(197, 20%, 69%);
+  --clr-dark-brown: hsl(11, 96%, 28%);
+
+  /* Set the dark and light themes */
+  --background: var(--clr-background-light);
+  --text: var(--clr-fonts-light);
+
+  @media (prefers-color-scheme: dark) {
+    --background: var(--clr-background-dark);
+    --text: var(--clr-fonts-dark);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+/* Colors for social icons */
+
+#github {
+  fill: #000000;
+}
+
+#linkedin {
+  fill: #007ab6;
+}
+
+#mastodon {
+  fill: #6364ff;
+}
+
+#bluesky {
+  fill: #295ef6;
+}
