@@ -1,3 +1,89 @@
+/* Get the fonts */
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../fonts/Barlow/Barlow-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../fonts/Barlow/Barlow-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../fonts/Barlow/Barlow-Thin.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../fonts/Barlow/Barlow-ThinItalic.ttf');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../fonts/Barlow/Barlow-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Barlow';
+  src: url('../fonts/Barlow/Barlow-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/Merriweather-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/Merriweather-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/Merriweather-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/Merriweather-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/Merriweather-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/Merriweather-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
 :root {
   /* Set site to accept dark mode */
   color-scheme: light dark;
@@ -20,6 +106,24 @@
     --background: var(--clr-background-dark);
     --text: var(--clr-fonts-dark);
   }
+
+  /* fonts */
+  --ff-headings: 'Barlow';
+  --ff-content: 'Merriweather';
+  --ff-fallback: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --fw-light: 100;
+  --fw-thin: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --fs-x-large: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-large: 3.5rem;
+  --fs-mid: 1.5rem;
+  --fs-reg: 1.125rem;
+  --fs-small: 0.9875rem;
+  --fs-x-small: 0.875rem;
 }
 
 *,
@@ -45,6 +149,25 @@ body {
   color: var(--text);
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
+  font-family: var(--ff-content), var(--ff-fallback);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-headings), var(--ff-fallback);
+}
+
+h1,
+h2 {
+  font-weight: var(--fw-thin);
+}
+
+h1 {
+  font-size: var(--fs-x-large);
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -7px;
 }
 
 /* utillity classes */
@@ -61,8 +184,6 @@ body {
 }
 
 .wrapper {
-  grid-template-columns: minmax(calc(100% -1rem), 1100px);
-  margin-inline: auto;
 }
 
 /* Colors for social icons */
