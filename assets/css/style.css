@@ -96,7 +96,7 @@
   --clr-links: hsla(16, 79%, 48%, 0.8);
   --clr-links-hover: hsl(16, 79%, 48%);
   --clr-light-blue: hsl(197, 20%, 69%);
-  --clr-dark-brown: hsl(11, 96%, 28%);
+  --clr-divider: hsl(11, 96%, 28%);
 
   /* Set the dark and light themes */
   --background: var(--clr-background-light);
@@ -143,6 +143,7 @@ picture {
 body {
   background: var(--background);
   color: var(--text);
+  min-height: 100svh;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
   font-family: var(--ff-content), var(--ff-fallback);
@@ -175,7 +176,7 @@ h1 {
   align-items: var(--flex-align, center);
 }
 
-.grid {background: crimson
+.grid {
   display: grid;
 }
 
@@ -187,7 +188,7 @@ h1 {
 @media (min-width: 800px) {
   .wrapper {
     width: 90%;
-    max-width: 1400px;  
+    max-width: 1400px;
   }
 }
 
@@ -219,6 +220,23 @@ h1 {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+footer {
+  padding-block-start: 1em;
+  margin-block-end: 2em;
+  border-block-start: 1px solid var(--clr-divider);
+}
+
+.social {
+  --flex-gap: 1.5rem;
+
+  list-style: none;
+}
+
+.social-icon {
+  height: 32px;
+  width: auto;
 }
 
 /* Colors for social icons */
