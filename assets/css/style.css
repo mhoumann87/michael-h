@@ -1,85 +1,85 @@
 /* Get the fonts */
 
 @font-face {
-  font-family: 'Barlow';
-  src: url('../fonts/Barlow/Barlow-Bold.ttf');
+  font-family: "Barlow";
+  src: url("../fonts/Barlow/Barlow-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Barlow';
-  src: url('../fonts/Barlow/Barlow-BoldItalic.ttf');
+  font-family: "Barlow";
+  src: url("../fonts/Barlow/Barlow-BoldItalic.ttf");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Barlow';
-  src: url('../fonts/Barlow/Barlow-Thin.ttf');
+  font-family: "Barlow";
+  src: url("../fonts/Barlow/Barlow-Thin.ttf");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Barlow';
-  src: url('../fonts/Barlow/Barlow-ThinItalic.ttf');
+  font-family: "Barlow";
+  src: url("../fonts/Barlow/Barlow-ThinItalic.ttf");
   font-weight: 100;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Barlow';
-  src: url('../fonts/Barlow/Barlow-Regular.ttf');
+  font-family: "Barlow";
+  src: url("../fonts/Barlow/Barlow-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Barlow';
-  src: url('../fonts/Barlow/Barlow-Italic.ttf');
+  font-family: "Barlow";
+  src: url("../fonts/Barlow/Barlow-Italic.ttf");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather';
-  src: url('../fonts/Merriweather/Merriweather-Bold.ttf');
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather/Merriweather-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Merriweather';
-  src: url('../fonts/Merriweather/Merriweather-BoldItalic.ttf');
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather/Merriweather-BoldItalic.ttf");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather';
-  src: url('../fonts/Merriweather/Merriweather-Light.ttf');
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather/Merriweather-Light.ttf");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Merriweather';
-  src: url('../fonts/Merriweather/Merriweather-LightItalic.ttf');
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather/Merriweather-LightItalic.ttf");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather';
-  src: url('../fonts/Merriweather/Merriweather-Regular.ttf');
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather/Merriweather-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Merriweather';
-  src: url('../fonts/Merriweather/Merriweather-Italic.ttf');
+  font-family: "Merriweather";
+  src: url("../fonts/Merriweather/Merriweather-Italic.ttf");
   font-weight: 400;
   font-style: italic;
 }
@@ -89,29 +89,23 @@
   color-scheme: light dark;
 
   /* colors */
-  --clr-background-dark: hsl(75, 3%, 24%);
-  --clr-background-light: hsl(32, 50%, 90%);
-  --clr-fonts-dark: hsl(32, 50%, 90%);
-  --clr-fonts-light: hsl(75, 3%, 24%);
+  --clr-background: hsl(32, 50%, 90%);
+  --clr-fonts: hsl(75, 3%, 24%);
   --clr-links: hsla(16, 79%, 48%, 0.8);
   --clr-links-hover: hsl(16, 79%, 48%);
   --clr-light-blue: hsl(197, 20%, 69%);
   --clr-divider: hsl(11, 96%, 28%);
 
-  /* Set the dark and light themes */
-  --background: var(--clr-background-light);
-  --text: var(--clr-fonts-light);
-
   @media (prefers-color-scheme: dark) {
-    --background: var(--clr-background-dark);
-    --text: var(--clr-fonts-dark);
+    --clr-background: hsl(75, 3%, 24%);
+    --clr-fonts: hsl(32, 50%, 90%);
   }
 
   /* fonts */
-  --ff-headings: 'Barlow';
-  --ff-content: 'Merriweather';
-  --ff-fallback: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ff-headings: "Barlow";
+  --ff-content: "Merriweather";
+  --ff-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   --fw-light: 100;
   --fw-thin: 300;
@@ -141,8 +135,8 @@ picture {
 }
 
 body {
-  background: var(--background);
-  color: var(--text);
+  background: var(--clr-background);
+  color: var(--clr-fonts);
   min-height: 100svh;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
@@ -153,6 +147,7 @@ h1,
 h2,
 h3 {
   font-family: var(--ff-headings), var(--ff-fallback);
+  text-wrap: balance;
 }
 
 h1,
@@ -167,7 +162,41 @@ h1 {
   letter-spacing: -7px;
 }
 
-/* utillity classes */
+p,
+li {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+header,
+footer,
+main,
+section,
+article {
+  container-type: inline-size;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animation for people that don't want them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  ::after {
+    animation-duration: 0, 01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    animation: none;
+  }
+}
+
+/* utility classes */
 .flex {
   display: flex;
   flex-direction: var(--flex-dir, row);
@@ -200,7 +229,7 @@ h1 {
   z-index: 999;
   color: var(--clr-links);
   padding: 0.5em 1em;
-  background: var(--background);
+  background: var(--clr-background);
   transform: translateY(-100%);
   transition: transform 250ms ease-in;
 }
