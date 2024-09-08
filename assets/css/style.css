@@ -89,12 +89,12 @@
   color-scheme: light dark;
 
   /* colors */
-  --clr-background: hsl(32, 50%, 90%);
+  --clr-background: hsl(31, 49%, 90%);
   --clr-fonts: hsl(75, 3%, 24%);
-  --clr-links: hsla(16, 79%, 48%, 0.8);
-  --clr-links-hover: hsl(16, 79%, 48%);
-  --clr-light-blue: hsl(197, 20%, 69%);
-  --clr-divider: hsl(11, 96%, 28%);
+  --clr-links: hsla(24, 97%, 54%, 0.8);
+  --clr-links-hover: hsl(24, 97%, 54%);
+  --clr-positive: hsl(128, 88%, 49%);
+  --clr-divider: hsl(241, 88%, 47%);
 
   @media (prefers-color-scheme: dark) {
     --clr-background: hsl(75, 3%, 24%);
@@ -228,6 +228,7 @@ ul {
 
 .grid {
   display: grid;
+  gap: var(--grid-gap, 1em);
 }
 
 .wrapper {
@@ -240,6 +241,14 @@ ul {
     width: 90%;
     max-width: 1400px;
   }
+}
+
+.divider-top {
+  border-block-start: solid var(--thickness, 3px) var(--clr-divider);
+}
+
+.divider-bottom {
+  border-block-end: solid var(--thickness, 3px) var(--clr-divider);
 }
 
 /* Accessibility classes */
@@ -282,6 +291,7 @@ ul {
 
 .logo {
   width: 65px;
+
   height: auto;
   margin: 0;
 }
@@ -355,7 +365,6 @@ ul {
 footer {
   padding-block-start: 1em;
   margin-block-end: 2em;
-  border-block-start: 1px solid var(--clr-divider);
 }
 
 .social {
