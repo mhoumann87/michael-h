@@ -89,12 +89,12 @@
   color-scheme: light dark;
 
   /* colors */
-  --clr-background: hsl(32, 50%, 90%);
+  --clr-background: hsl(31, 49%, 90%);
   --clr-fonts: hsl(75, 3%, 24%);
-  --clr-links: hsla(16, 79%, 48%, 0.8);
-  --clr-links-hover: hsl(16, 79%, 48%);
-  --clr-light-blue: hsl(197, 20%, 69%);
-  --clr-divider: hsl(11, 96%, 28%);
+  --clr-links: hsla(24, 97%, 54%, 0.8);
+  --clr-links-hover: hsl(24, 97%, 54%);
+  --clr-positive: hsl(128, 88%, 49%);
+  --clr-divider: hsl(241, 88%, 47%);
 
   @media (prefers-color-scheme: dark) {
     --clr-background: hsl(75, 3%, 24%);
@@ -228,6 +228,7 @@ ul {
 
 .grid {
   display: grid;
+  gap: var(--grid-gap, 1em);
 }
 
 .wrapper {
@@ -240,6 +241,14 @@ ul {
     width: 90%;
     max-width: 1400px;
   }
+}
+
+.divider-top {
+  border-block-start: solid var(--thickness, 3px) var(--clr-divider);
+}
+
+.divider-bottom {
+  border-block-end: solid var(--thickness, 3px) var(--clr-divider);
 }
 
 /* Accessibility classes */
@@ -282,6 +291,7 @@ ul {
 
 .logo {
   width: 65px;
+
   height: auto;
   margin: 0;
 }
@@ -313,10 +323,48 @@ ul {
   transform: scaleX(1);
 }
 
+.front-page-header {
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.front-page-header .image-box {
+  grid-column: 1 / 6;
+  grid-row-start: 1;
+}
+
+.front-page-header .filter-box {
+  grid-column: 1 / -1;
+  grid-row-start: 1;
+  background-image: linear-gradient(
+    to right,
+    hsl(from var(--clr-background) h s l / 0.4) 20%,
+    hsl(from var(--clr-background) h s l / 0.6) 40%,
+    hsl(from var(--clr-background) h s l / 0.9) 60%,
+    hsl(from var(--clr-background) h s l / 1) 80%,
+    var(--clr-background)
+  );
+}
+
+.front-page-header .headline {
+  grid-column: 4 / -1;
+  grid-row-start: 1;
+  place-self: center;
+}
+
+.headline h2 {
+  font-size: var(--fs-x-large);
+}
+
+.headline p {
+  line-height: 1;
+  margin: 0;
+  font-size: var(--fs-mid);
+}
+
 footer {
   padding-block-start: 1em;
   margin-block-end: 2em;
-  border-block-start: 1px solid var(--clr-divider);
 }
 
 .social {

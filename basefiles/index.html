@@ -15,69 +15,85 @@
   <body class="grid">
     <a href="#main" class="skip-to-content">Skip to content</a>
 
-    <div class="nav-bar wrapper flex" role="navigation">
-      <div class="site-id flex">
-        <a href="./index.html">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 149.223 107.066"
-            height="404.658"
-            width="563.994"
-            class="logo"
-            id="logo"
-          >
-            <title>Logo for michael-h.dk</title>
-            <path
-              style="
-                fill: #00f;
-                fill-opacity: 0.60588223;
-                stroke-width: 0.26458332;
-              "
-              d="m-32.38-37.381-48.95.062-48.95-.2 24.422-42.424 24.648-42.292 24.529 42.362z"
-              transform="rotate(180 -2.382 -7.584)"
-            />
-            <path
-              style="
-                fill: red;
-                fill-opacity: 0.50678735;
-                stroke-width: 0.26458332;
-              "
-              d="m102.364 100.022-48.95.062-48.95-.2 24.421-42.423 24.649-42.292L78.063 57.53Z"
-              transform="translate(-4.764 -15.169)"
-            />
-            <path
-              style="
-                fill: #0f0;
-                fill-opacity: 0.50588223;
-                stroke-width: 0.26458332;
-              "
-              d="m153.987 100.19-48.95.061-48.95-.2 24.421-42.423 24.649-42.292 24.529 42.361z"
-              transform="translate(-4.764 -15.169)"
-            />
-          </svg>
-          <span class="sr-only">Navigate to homepage</span>
-        </a>
+    <section class="nav-wrapper divider-bottom">
+      <div class="nav-bar wrapper flex">
+        <div class="site-id flex">
+          <a href="./index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 149.223 107.066"
+              height="404.658"
+              width="563.994"
+              class="logo"
+              id="logo"
+            >
+              <title>Logo for michael-h.dk</title>
+              <path
+                style="
+                  fill: #00f;
+                  fill-opacity: 0.60588223;
+                  stroke-width: 0.26458332;
+                "
+                d="m-32.38-37.381-48.95.062-48.95-.2 24.422-42.424 24.648-42.292 24.529 42.362z"
+                transform="rotate(180 -2.382 -7.584)"
+              />
+              <path
+                style="
+                  fill: red;
+                  fill-opacity: 0.50678735;
+                  stroke-width: 0.26458332;
+                "
+                d="m102.364 100.022-48.95.062-48.95-.2 24.421-42.423 24.649-42.292L78.063 57.53Z"
+                transform="translate(-4.764 -15.169)"
+              />
+              <path
+                style="
+                  fill: #0f0;
+                  fill-opacity: 0.50588223;
+                  stroke-width: 0.26458332;
+                "
+                d="m153.987 100.19-48.95.061-48.95-.2 24.421-42.423 24.649-42.292 24.529 42.361z"
+                transform="translate(-4.764 -15.169)"
+              />
+            </svg>
+            <span class="sr-only">Navigate to homepage</span>
+          </a>
 
-        <a href="./index.html">
-          <h1>michael-h.dk</h1>
-          <span class="sr-only">Navigate to homepage</span>
-        </a>
+          <a href="./index.html">
+            <h1>michael-h.dk</h1>
+            <span class="sr-only">Navigate to homepage</span>
+          </a>
+        </div>
+
+        <ul class="flex" role="navigation">
+          <li class="nav-link"><a href="#">home</a></li>
+          <li class="nav-link"><a href="#">javascript</a></li>
+          <li class="nav-link"><a href="#">web development</a></li>
+          <li class="nav-link"><a href="#">generative art</a></li>
+          <li class="nav-link"><a href="#">contact</a></li>
+        </ul>
       </div>
+    </section>
 
-      <ul class="flex" role="navigation">
-        <li class="nav-link"><a href="#">home</a></li>
-        <li class="nav-link"><a href="#">javascript</a></li>
-        <li class="nav-link"><a href="#">web development</a></li>
-        <li class="nav-link"><a href="#">generative art</a></li>
-        <li class="nav-link"><a href="#">contact</a></li>
-      </ul>
-    </div>
+    <header role="banner" class="grid front-page-header">
+      <div class="image-box">
+        <img
+          src="./assets/images/header-img.jpg"
+          alt="girl on a beach chair looking at the camera - placeholder image"
+          width="2400"
+          height="1599"
+        />
+      </div>
+      <div class="filter-box"></div>
+      <div class="headline">
+        <h2>michael-h.dk</h2>
+        <p>multimedia designer & web developer</p>
+      </div>
+    </header>
 
-    <header></header>
+    <main id="main" class="wrapper grid"></main>
 
-    <main id="main" class="wrapper grid">test text</main>
-
-    <footer>
+    <footer class="divider-top">
       <section class="content-box flex wrapper">
         <div class="copy">
           <p>
