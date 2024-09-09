@@ -2,46 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.ico"
+      type="image/x-icon"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>michael-h.dk - multimedia designer and web developer</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/script.js" defer></script>
   </head>
   <body class="grid">
     <a href="#main" class="skip-to-content">Skip to content</a>
 
-    <div class="nav-bar wrapper flex" role="navigation">
-      <a href="./index.html"
-        >michael-h.dk<span class="sr-only">Navigate to homepage</span></a
-      >
-      <ul class="flex">
-        <li class="nav-link" href="#">home</li>
-        <li class="nav-link" href="#">javascript</li>
-        <li class="nav-link" href="#">web development</li>
-        <li class="nav-link" href="#">generative art</li>
-        <li class="nav-link" href="#">contact</li>
-      </ul>
-    </div>
+    <section class="nav-wrapper divider-bottom">
+      <div class="nav-bar wrapper flex">
+        <div class="site-id flex">
+          <div class="site-id flex">
+            <a href="./index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 149.223 107.066"
+                height="404.658"
+                width="563.994"
+                class="logo"
+                id="logo"
+              >
+                <title>Logo for michael-h.dk</title>
+                <path
+                  style="
+                    fill: #00f;
+                    fill-opacity: 0.60588223;
+                    stroke-width: 0.26458332;
+                  "
+                  d="m-32.38-37.381-48.95.062-48.95-.2 24.422-42.424 24.648-42.292 24.529 42.362z"
+                  transform="rotate(180 -2.382 -7.584)"
+                />
+                <path
+                  style="
+                    fill: red;
+                    fill-opacity: 0.50678735;
+                    stroke-width: 0.26458332;
+                  "
+                  d="m102.364 100.022-48.95.062-48.95-.2 24.421-42.423 24.649-42.292L78.063 57.53Z"
+                  transform="translate(-4.764 -15.169)"
+                />
+                <path
+                  style="
+                    fill: #0f0;
+                    fill-opacity: 0.50588223;
+                    stroke-width: 0.26458332;
+                  "
+                  d="m153.987 100.19-48.95.061-48.95-.2 24.421-42.423 24.649-42.292 24.529 42.361z"
+                  transform="translate(-4.764 -15.169)"
+                />
+              </svg>
+              <span class="sr-only">Navigate to homepage</span>
+            </a>
 
-    <header role="banner" class="grid">
-      <div class="image-box"></div>
+          <a href="./index.html">
+            <h1>michael-h.dk</h1>
+            <span class="sr-only">Navigate to homepage</span>
+          </a>
+        </div>
+
+        <ul class="flex" role="navigation">
+          <li class="nav-link"><a href="#">home</a></li>
+          <li class="nav-link"><a href="#">javascript</a></li>
+          <li class="nav-link"><a href="#">web development</a></li>
+          <li class="nav-link"><a href="#">generative art</a></li>
+          <li class="nav-link"><a href="#">contact</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <header role="banner" class="grid front-page-header">
+      <div class="image-box">
+        <img
+          src="./assets/images/header-img.jpg"
+          alt="girl on a beach chair looking at the camera - placeholder image"
+          width="2400"
+          height="1599"
+        />
+      </div>
       <div class="filter-box"></div>
       <div class="headline">
-        <h1>michael-h.dk</h1>
+        <h2>michael-h.dk</h2>
         <p>multimedia designer & web developer</p>
       </div>
     </header>
 
-    <main id="main" class="wrapper grid"></main>
+    <main id="main" class="wrapper grid">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+        consequatur, magnam repellendus ratione laboriosam doloribus,
+        exercitationem sed iusto dignissimos illum quis animi dolorum beatae
+        praesentium tempore quod officia. Vero ipsam perferendis laborum labore,
+        eius doloribus at quod amet aliquam porro tempore in, autem enim beatae
+        reprehenderit? Similique saepe nam deserunt dolorem, beatae tempora
+        ipsum excepturi.
+      </p>
+    </main>
 
-    <footer class="flex">
-      <div class="copy">
-        <p>
-          Design and development &copy;<span id="copy"></span> Michael Houmann
-        </p>
-      </div>
+    <footer class="divider-top">
+      <section class="content-box flex wrapper">
+        <div class="copy">
+          <p>
+            Design and development &copy;<span id="copy"></span>
+            <a href="mailto:admin@michael-h.dk">Michael Houmann</a>
+          </p>
+        </div>
 
-      <div class="social">
-        <ul class="flex">
+        <ul class="social flex">
           <li>
             <a
               href="https://github.com/mhoumann87"
@@ -80,6 +152,7 @@
                   </g>
                 </g>
               </svg>
+              <span class="sr-only">Navigate to github profile</span>
             </a>
           </li>
 
@@ -120,6 +193,7 @@
                   </g>
                 </g>
               </svg>
+              <span class="sr-only">Navigate to linkedin profile</span>
             </a>
           </li>
 
@@ -145,6 +219,7 @@
                   d="M180 141.964C163.699 110.262 119.308 51.1817 78.0347 22.044C38.4971 -5.86834 23.414 -1.03207 13.526 3.43594C2.08093 8.60755 0 26.1785 0 36.5164C0 46.8542 5.66748 121.272 9.36416 133.694C21.5786 174.738 65.0603 188.607 105.104 184.156C107.151 183.852 109.227 183.572 111.329 183.312C109.267 183.642 107.19 183.924 105.104 184.156C46.4204 192.847 -5.69621 214.233 62.6582 290.33C137.848 368.18 165.705 273.637 180 225.702C194.295 273.637 210.76 364.771 295.995 290.33C360 225.702 313.58 192.85 254.896 184.158C252.81 183.926 250.733 183.645 248.671 183.315C250.773 183.574 252.849 183.855 254.896 184.158C294.94 188.61 338.421 174.74 350.636 133.697C354.333 121.275 360 46.8568 360 36.519C360 26.1811 357.919 8.61012 346.474 3.43851C336.586 -1.02949 321.503 -5.86576 281.965 22.0466C240.692 51.1843 196.301 110.262 180 141.964Z"
                 />
               </svg>
+              <span class="sr-only">Navigate to Bluesky profile</span>
             </a>
           </li>
 
@@ -169,10 +244,11 @@
                   d="M23.193 7.88c0-5.207-3.411-6.733-3.411-6.733C18.062.357 15.108.025 12.041 0h-.076c-3.069.025-6.02.357-7.74 1.147 0 0-3.412 1.526-3.412 6.732 0 1.193-.023 2.619.015 4.13.124 5.092.934 10.11 5.641 11.355 2.17.574 4.034.695 5.536.612 2.722-.15 4.25-.972 4.25-.972l-.09-1.975s-1.945.613-4.13.54c-2.165-.075-4.449-.234-4.799-2.892a5.5 5.5 0 0 1-.048-.745s2.125.52 4.818.643c1.646.075 3.19-.097 4.758-.283 3.007-.359 5.625-2.212 5.954-3.905.517-2.665.475-6.508.475-6.508zm-4.024 6.709h-2.497v-6.12c0-1.29-.543-1.944-1.628-1.944-1.2 0-1.802.776-1.802 2.313v3.349h-2.484v-3.35c0-1.537-.602-2.313-1.802-2.313-1.085 0-1.628.655-1.628 1.945v6.119H4.831V8.285c0-1.29.328-2.314.987-3.07.68-.759 1.57-1.147 2.674-1.147 1.278 0 2.246.491 2.886 1.474L12 6.585l.622-1.043c.64-.983 1.608-1.474 2.886-1.474 1.104 0 1.994.388 2.674 1.146.658.757.986 1.781.986 3.07v6.305z"
                 />
               </svg>
+              <span class="sr-only">Navigate to mastodon profile</span>
             </a>
           </li>
         </ul>
-      </div>
+      </section>
     </footer>
   </body>
 </html>
