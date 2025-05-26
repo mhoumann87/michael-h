@@ -166,10 +166,6 @@ h1 {
   color: var(--clr-fonts);
 }
 
-a:has(h1) {
-  text-decoration: none;
-}
-
 p,
 li {
   max-width: 65ch;
@@ -294,6 +290,15 @@ ul {
   height: auto;
   margin: 0;
 }
+
+.nav-wrapper h2 {
+  color: var(--clr-fonts);
+  font-size: var(--fs-mid);
+ }
+
+ .nav-wrapper a:has(h2) {
+  text-decoration: none;
+ }
 
 .nav-bar ul li {
   grid-column: 3 / -2;
