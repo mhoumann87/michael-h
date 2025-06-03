@@ -232,14 +232,13 @@ ul {
 }
 
 .wrapper {
-  width: calc(100svh - 2rem);
+  width: calc(100svw - 2rem);
   margin-inline: auto;
 }
 
 @media (width > 800px) {
   .wrapper {
-    width: 90%;
-    max-width: 1400px;
+    width: min(90%, 1400px);
   }
 }
 

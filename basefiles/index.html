@@ -9,14 +9,14 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>michael-h.dk - multimedia designer and web developer</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="./assets/js/script.js" defer></script>
   </head>
   <body class="grid">
     <a href="#main" class="skip-to-content">Skip to content</a>
 
-    <section class="nav-wrapper divider-bottom">
-      <div class="nav-bar wrapper flex">
+    <header class="nav-wrapper divider-bottom">
+      <nav class="nav-bar wrapper flex">
         <div class="site-id flex">
           <a href="./index.html">
             <svg
@@ -65,17 +65,18 @@
           </a>
         </div>
 
-        <ul class="flex" role="navigation">
+        <nav>
+        <ul class="flex" role="listbox">
           <li class="nav-link"><a href="#">home</a></li>
           <li class="nav-link"><a href="#">javascript</a></li>
           <li class="nav-link"><a href="#">web development</a></li>
           <li class="nav-link"><a href="#">generative art</a></li>
           <li class="nav-link"><a href="#">contact</a></li>
         </ul>
-      </div>
-    </section>
+      </nav>
+    </header>
 
-    <header role="banner" class="grid front-page-header">
+    <section role="banner" class="grid front-page-header">
       <div class="image-box">
         <img
           src="./assets/images/header-img.jpg"
@@ -89,7 +90,7 @@
         <h2>michael-h.dk</h2>
         <p>multimedia designer & web developer</p>
       </div>
-    </header>
+    </section>
 
     <main id="main" class="wrapper grid"></main>
 
